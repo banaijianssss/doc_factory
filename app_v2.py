@@ -477,6 +477,7 @@ def preview_template(template_type):
 if __name__ == '__main__':
     print("=" * 50)
     print("智能文档工厂 - Web版 v2.0")
-    print("访问地址: http://localhost:5000")
     print("=" * 50)
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # 使用环境变量PORT，默认为5000
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=False, host='0.0.0.0', port=port)
