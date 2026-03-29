@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: doc-factory
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app_v2.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: FLASK_ENV
+        value: production
