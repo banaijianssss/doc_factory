@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  doc-factory:
+    build: .
+    container_name: doc-factory
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./output:/app/output
+      - ./custom_templates:/app/custom_templates
+    restart: unless-stopped
+    environment:
+      - FLASK_ENV=production
